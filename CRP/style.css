@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.codeEditor{
+    width: 60vw;
+    height: 500px;
+    margin: auto;
+    background: #202020;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: monospace;
+    font-size: 30px;
+}
+select{
+    font-size: 25px;
+    background: transparent;
+    color: white;
+}
+option{
+    background: #202020;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: blue;
+}
