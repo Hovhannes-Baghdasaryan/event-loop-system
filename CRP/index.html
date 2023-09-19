@@ -1,40 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="./index.js"></script>
-</head>
-<body>
-<div>
-
-<div class="codeEditor">
+  </head>
+  <body>
     <div>
-   <pre>
+      <div class="codeEditor">
+        <div>
+          <pre class="code">
+  &ltbody&gt
+    <span id="div_span1">&ltdiv&gt</span>
+      <span id="p_span1" >&ltp class=<span id="class_span" class="span_default">"item1"</span>&gt <span id="p_span1_text" class="span_default">Hello World!</span> &lt/p&gt</span>    
+    <span id="div_span2">&lt/div&gt</span>
 
-  &ltdiv&gt
-       &ltp class="item2"&gt
-       Hello World!
-       &lt/p&gt
-  &lt/div&gt
-       &ltp class="item2"&gt
-       Hello World2 !
-       &lt/p&gt
-  &lt/div&gt
+    <span id="p_span2" >&ltp class="item2"&gt <span id="p_span2_text" class="span_default">Hello World!</span> &lt/p&gt</span>    
+  &lt/body&gt
    </pre>
-    </div>
-    <div>
-        <pre>
-        <select><option>p</option><option>div>p</option><option>.item1</option></select>{
-           color: <select><option class="red">red</option><option class="green">green</option><option class="blue">blue</option></select>;
+        </div>
+
+        <div class="codeEditor_right">
+          <pre>
+        <select id="select1">
+            <option value="0">Select the tag</option>
+            <option value="1">p</option>
+            <option value="2">div>p</option>
+            <option value="3">.item1</option>
+        </select>{
+           color: <select id="select2">
+            <option value="">Select the color</option>
+            <option value="red" class="red">red</option>
+            <option value="green" class="green">green</option>
+            <option value="blue" class="blue">blue</option>
+        </select>;
         }
             </pre>
+
+          <button id="run_button">Run!</button>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-</body>
+  </body>
 </html>
