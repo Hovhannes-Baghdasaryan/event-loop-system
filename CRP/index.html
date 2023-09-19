@@ -1,40 +1,70 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="./index.js"></script>
 </head>
+
 <body>
-<div>
+    <div class="cont">
 
-<div class="codeEditor">
-    <div>
-   <pre>
+    <div id="codeEditor">
+            <div>
+                <pre>
+  &lt<span style="color: rgb(95, 95, 221);">div</span>&gt
+      <span class="pTag pTag1"> &lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">class</span>=<span style="color: orange">"item"</span>&gt
+            Hello World!
+       &lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
+       <span class="pTag pTag2">&lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">class</span>=<span style="color: orange">"item"</span>&gt
+            Hello World2!
+       &lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
+       <span class="pTag pTag3">&lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">class</span>=<span style="color: orange">"item"</span>&gt
+            Hello World3!
+       &lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
+  &lt<span style="color: rgb(95, 95, 221);">/div</span>&gt
 
-  &ltdiv&gt
-       &ltp class="item2"&gt
-       Hello World!
-       &lt/p&gt
-  &lt/div&gt
-       &ltp class="item2"&gt
-       Hello World2 !
-       &lt/p&gt
-  &lt/div&gt
+  <span class="pTag pTag4">&lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">id</span>=<span style="color: orange">"myP"</span>&gt
+            Hello World4!
+   &lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
+   &lt<span style="color: rgb(95, 95, 221);">img</span> <span style="color: cyan">src</span>=<span style="color: orange">"./MyImage.jpg"</span> <span style="color: cyan">style</span>=<span style="color: orange">"<select id="selectWidth"><option value="auto"></option><option value="100px">width: 100px;</option><option value="300px">width: 200px;</option><option value="500px">width: 500px;</option></select>"</span>/>
    </pre>
-    </div>
-    <div>
-        <pre>
-        <select><option>p</option><option>div>p</option><option>.item1</option></select>{
-           color: <select><option class="red">red</option><option class="green">green</option><option class="blue">blue</option></select>;
+            </div>
+            <div>
+                <pre>
+        <select id="selectOR"><option>p</option><option>div>p</option><option>.item</option><option>#myP</option></select>{
+          <span style="color: cyan;">color </span>:<span id="hexColor"><select id="selectColor"><option>red</option><option>green</option><option>blue</option></select></span>;
+          <span style="color: cyan;">text-align</span>: <select id="selectTextAlign"><option>start</option><option>center</option><option>end</option></select>
+          <span style="color: cyan;">font-family</span>: <select id="selectFontFamily"><option>sans-serif</option><option>arial</option><option>fantasy</option><option>monospace</option></select>      
         }
             </pre>
+            </div>
+        </div>
+        <div id="browser">
+            <div class="div">
+                <p class="item">
+                     Hello World!
+                </p>
+                <p class="item">
+                     Hello World2!
+                </p>
+                <p class="item">
+                     Hello World3!
+                </p>
+           </div>
+         
+           <p id="myP">
+                     Hello World4!
+            </p>
+            <img src="./MyImage.jpg"/>
+        </div>
     </div>
-</div>
-</div>
+    <button id="run">Run</button>
 </body>
+
 </html>
