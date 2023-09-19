@@ -12,7 +12,7 @@
     <script defer src="./index.js"></script>
   </head>
   <body>
-    <div>
+    <div class="block">
       <div class="codeEditor">
         <div>
           <pre class="code">
@@ -25,16 +25,26 @@
   &lt/body&gt
    </pre>
         </div>
-
+          <pre>
+         &lt;body&gt;
+           &lt;img width="<select id="width-select">
+            <option value="0">Select the width</option>
+            <option value="100">100px</option>
+            <option value="400">400px</option>
+            <option value="0">0</option>
+        </select>"
+            src="./Planeta" alt="Planeta" /&gt;
+         &lt;/body&gt;
+</pre>
         <div class="codeEditor_right">
           <pre>
-        <select id="select1">
+ <select id="select1">
             <option value="0">Select the tag</option>
             <option value="1">p</option>
             <option value="2">div>p</option>
             <option value="3">.item1</option>
-        </select>{
-           color: <select id="select2">
+   </select>{
+       color: <select id="select2">
             <option value="">Select the color</option>
             <option value="red" class="red">red</option>
             <option value="green" class="green">green</option>
@@ -42,10 +52,37 @@
         </select>;
         }
             </pre>
-
+            X
           <button id="run_button">Run!</button>
+
         </div>
+
       </div>
+        <div class="image-block" id="image-block">
+            <img width="100%" height="100%" src="../assets/images/Planeta.jpeg" alt="">
+        </div>
+
+<div class="performance">
+    <div class="performance_block ">
+        <div class="lighthouse break">100</div>
+        <p  class="lighthouse-text">Performance</p>
+    </div>
+
+    <div class="performance_block ">
+        <div class="lighthouse ">100</div>
+        <p  class="lighthouse-text">Accessibility</p>
+    </div>
+
+    <div class="performance_block ">
+        <div class="lighthouse break">100</div>
+        <p class="lighthouse-text">Best Practices</p>
+    </div>
+
+    <div class="performance_block">
+        <div class="lighthouse">100</div>
+        <p  class="lighthouse-text">SEO</p>
+    </div>
+</div>
     </div>
   </body>
 </html>

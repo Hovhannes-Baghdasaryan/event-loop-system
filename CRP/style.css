@@ -10,15 +10,19 @@ body {
   align-items: center;
 }
 
-.codeEditor {
+.block{
   width: 100%;
+  border-radius: 10px;
+  background: #202020;
+
+}
+
+.codeEditor {
   height: 500px;
   margin: auto;
-  background: #202020;
-  border-radius: 10px;
-  color: white;
+    color: white;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   font-family: monospace;
   font-size: 30px;
@@ -152,6 +156,52 @@ span {
   }
 }
 
+.image-block{
+  width: 200px;
+  background: forestgreen;
+  height: 200px;
+  margin: 0 auto;
+}
+
+
+
+.performance{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 50px 0;
+}
+
+.performance_block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 16px;
+}
+
+.lighthouse{
+  width: 80px;
+  height: 80px;
+  border: 5px solid forestgreen;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  font-weight: 600;
+  color: green;
+
+}
+
+.lighthouse-text{
+  color: snow;
+  font-size: 28px;
+  font-weight: 500;
+}
+
 @keyframes div_p_anime2 {
   0% {
     width: 0;
@@ -193,3 +243,4 @@ span {
     scale: 1;
   }
 }
+
