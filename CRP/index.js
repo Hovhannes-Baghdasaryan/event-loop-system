@@ -9,6 +9,7 @@ let selectFontFamily = document.getElementById('selectFontFamily')
 let selectWidth = document.getElementById('selectWidth')
 let hexColor = document.getElementById('hexColor')
 let img = browser.querySelector('img')
+let divTags = document.getElementsByClassName('divTag')
 let animations = {
     "p": () => {
         let i = 0
@@ -28,6 +29,9 @@ let animations = {
             if (i > 3) {
                 clearInterval(loop)
                 setTimeout(() => {
+                    clear()
+                    divTags[0].style.background = "lime"
+                    divTags[1].style.background = "lime"
                     i = 0
                     loop = setInterval(() => {
                         pTags[i].style.background = "rgb(78, 210, 78)"
@@ -65,9 +69,9 @@ run.addEventListener("click", () => {
     codeEditor.style.opacity = "1"
     clear()
     let elements = document.querySelectorAll("p")
-    for(let i = 0;i<elements.length;i++){
-        elements[i].style.color="black"
-        elements[i].style.textAlign="start"
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].style.color = "black"
+        elements[i].style.textAlign = "start"
     }
     hexColor.style.color = "white"
 
@@ -86,29 +90,31 @@ run.addEventListener("click", () => {
         browser.style.display = "block"
         browser.style.opacity = "1"
         codeEditor.style.opacity = "0.3"
-        let elements = Array.from(browser.querySelectorAll(selectOR.value)) 
-        
-        if(selectOR.value==="div>p"){
+        let elements = Array.from(browser.querySelectorAll(selectOR.value))
+
+        if (selectOR.value === "div>p") {
             elements = Array.from(browser.querySelectorAll(".div>p"))
         }
-            elements.map(el=>{
-                el.style.color = selectColor.value
-                el.style.textAlign = selectTextAlign.value
-                el.style.fontFamily = selectFontFamily.value
-            })  
-            img.style.width = selectWidth.value
+        elements.map(el => {
+            el.style.color = selectColor.value
+            el.style.textAlign = selectTextAlign.value
+            el.style.fontFamily = selectFontFamily.value
+        })
+        img.style.width = selectWidth.value
         clear()
         selectColor.style.display = "inline"
         if (span) {
             span.remove()
         }
     }, 10000)
-    setTimeout(()=>{
+    setTimeout(() => {
         browser.style.opacity = "1"
         codeEditor.style.opacity = "1"
-    },14000)
+    }, 14000)
 })
 
 function clear() {
+    divTags[0].style.background = "transparent"
+    divTags[1].style.background = "transparent"
     pTags.map(el => el.style.background = "transparent")
 }
