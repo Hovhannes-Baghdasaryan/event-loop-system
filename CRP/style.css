@@ -18,7 +18,6 @@ body {
 }
 
 .codeEditor {
-  height: 500px;
   margin: auto;
     color: white;
   display: flex;
@@ -180,6 +179,14 @@ span {
   align-items: center;
 
   gap: 16px;
+}
+
+.lighthouse_name{
+  text-align: center;
+  margin: 25px auto;
+  color: snow;
+  font-size: 48px;
+  font-weight: 500;
 }
 
 .lighthouse{
