@@ -5,16 +5,58 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Event Loop</title>
-    <script src="./script.js" defer></script>
+    <script type="module" src="./script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="codeEditor">
-        <pre>
-            setTimeout(() => {
-                console.log(<input class="text" placeholder="text" />)
-            }, <input class="delay" placeholder="number" />)
-        </pre>
+    <div class="menu">
+        <div class="menu-item" data-name="settimeout">SetTimeout</div>
+        <div class="menu-item" data-name="setinterval">SetInterval</div>
+        <div class="menu-item" data-name="promise">Promise</div>
+        <div class="menu-item" data-name="console">Console.log</div>
     </div>
-</body>
+
+    <div class="codeEditor">
+
+    </div>
+
+    <div class="run-container">
+        <button id="run">Run Code</button>
+    </div>
+
+    <section class="event-loop">
+        <div class="block_wrapper">
+            <p class="block_text">Call Stack</p>
+            <div class="callstack" id="callback_element">
+            </div>
+        </div>
+
+        <img src="./../assets/event-loop-spinner.svg" class="spinner" id="event_spinner" />
+
+        <div class="main_wrapper">
+            <div class="block_wrapper webapi_wrapper">
+                <p class="block_text">WEB API</p>
+                <div class="webapi">
+                    
+                </div>
+            </div>
+            
+            <div class="task_queue">
+                <div class="block_wrapper">
+                    <div class="microtask">
+                        
+                    </div>
+                    <p class="block_text">Microtask</p>
+                </div>
+
+                <div class="block_wrapper">
+                    <div class="macrotask">
+                        
+                    </div>
+                    <p class="block_text">Macrotask</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
 </html>
