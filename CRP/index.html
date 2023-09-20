@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script defer src="./index.js"></script>
 </head>
 
@@ -20,16 +21,16 @@
   &lt<span style="color: rgb(95, 95, 221);" class="divTag">div</span>&gt
 
     <span class="pTag pTag1"> &lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">class</span>=<span style="color: orange">"item"</span>&gt Hello World1!&lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
-       
+
     <span class="pTag pTag2">&lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">class</span>=<span style="color: orange">"item"</span>&gt Hello World2!&lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
-            
+
     <span class="pTag pTag3">&lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">class</span>=<span style="color: orange">"item"</span>&gtHello World3!&lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
-               
+
   &lt<span style="color: rgb(95, 95, 221);" class="divTag">/div</span>&gt
 
   <span class="pTag pTag4">&lt<span style="color: rgb(95, 95, 221);">p</span> <span style="color: cyan">id</span>=<span style="color: orange">"myP"</span>&gtHello World4!&lt<span style="color: rgb(95, 95, 221);">/p</span>&gt</span>
 
-   &lt<span style="color: rgb(95, 95, 221);">img</span> <span style="color: cyan">src</span>=<span style="color: orange">"./MyImage.jpg"</span> <span style="color: cyan">style</span>=<span style="color: orange">"<select id="selectWidth"><option value="auto"></option><option value="100px">width: 100px;</option><option value="300px">width: 200px;</option><option value="500px">width: 500px;</option></select>"</span>/>
+
    </pre>
             </div>
             <div>
@@ -37,31 +38,62 @@
         <select id="selectOR"><option>p</option><option>div>p</option><option>.item</option><option>#myP</option></select>{
           <span style="color: cyan;">color </span>:<span id="hexColor"><select id="selectColor"><option>red</option><option>green</option><option>blue</option></select></span>;
           <span style="color: cyan;">text-align</span>: <select id="selectTextAlign"><option>start</option><option>center</option><option>end</option></select>
-          <span style="color: cyan;">font-family</span>: <select id="selectFontFamily"><option>sans-serif</option><option>arial</option><option>fantasy</option><option>monospace</option></select>      
-        }
-            </pre>
+          <span style="color: cyan;">font-family</span>: <select id="selectFontFamily"><option>sans-serif</option><option>arial</option><option>fantasy</option><option>monospace</option></select>
+        </div>
+          <pre>
+                 &lt<span style="color: rgb(95, 95, 221);">img</span> <span style="color: cyan">src</span>=<span style="color: orange">"./MyImage.jpg"</span>  <span style="color: cyan">alt</span>=<span style="color: orange">"MyImage"</span> <span style="color: cyan">width</span>=<span style="color: orange">"<select id="width-select"><option value="auto"></option><option value="100px">100px;</option><option value="300px">300px;</option><option value="0"> 0;</option></select>"</span>/>
+
+          <!-- &lt;img width="<select id="width-select">
+            <option value="0">Select the width</option>
+            <option value="100">100px</option>
+            <option value="400">400px</option>
+            <option value="0">0</option>
+        </select>"
+            src="./Planeta" alt="Planeta" /&gt;
+         &lt;/body&gt;-->
+</pre>
+        <div class="codeEditor_right">
+
             </div>
         </div>
-        <div id="browser">
-            <div class="div">
-                <p class="item">
-                     Hello World!
-                </p>
-                <p class="item">
-                     Hello World2!
-                </p>
-                <p class="item">
-                     Hello World3!
-                </p>
-           </div>
-         
-           <p id="myP">
-                     Hello World4!
-            </p>
-            <img src="./MyImage.jpg"/>
+
+
+        <div class="image-block" id="image-block">
+            <img width="100%" height="100%" src="../assets/images/Planeta.jpeg" alt="">
+        </div>
+
+        <p class="lighthouse_name">Lighthouse</p>
+
+        <div class="performance">
+            <div class="performance_block ">
+                <div class="lighthouse break">100</div>
+                <p  class="lighthouse-text">Performance</p>
+            </div>
+
+            <div class="performance_block ">
+                <div class="lighthouse ">100</div>
+                <p  class="lighthouse-text">Accessibility</p>
+            </div>
+
+            <div class="performance_block ">
+                <div class="lighthouse break">100</div>
+                <p class="lighthouse-text">Best Practices</p>
+            </div>
+
+            <div class="performance_block">
+                <div class="lighthouse">100</div>
+                <p  class="lighthouse-text">SEO</p>
+            </div>
         </div>
     </div>
     <button id="run">Run</button>
-</body>
 
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
 </html>

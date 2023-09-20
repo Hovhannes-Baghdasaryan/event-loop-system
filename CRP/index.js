@@ -1,15 +1,21 @@
 let codeEditor = document.getElementById("codeEditor")
-let browser = document.getElementById("browser")
 let run = document.getElementById('run')
 let pTags = Array.from(document.getElementsByClassName('pTag'))
 let selectOR = document.getElementById('selectOR')
 let selectColor = document.getElementById('selectColor')
 let selectTextAlign = document.getElementById('selectTextAlign')
 let selectFontFamily = document.getElementById('selectFontFamily')
-let selectWidth = document.getElementById('selectWidth')
 let hexColor = document.getElementById('hexColor')
-let img = browser.querySelector('img')
+const width_select = document.getElementById('width-select')
+const image_block = document.getElementById('image-block')
+const performance_list = document.querySelectorAll('.break')
+const performance_data = Array.from(performance_list)
 let divTags = document.getElementsByClassName('divTag')
+let lighthouseTitle = document.getElementById('lighthouse-title');
+let crpCompletingStage = document.getElementById('crp-completing-stage');
+
+
+let width_value
 let animations = {
     "p": () => {
         let i = 0
@@ -64,8 +70,52 @@ let colors = {
     "green": "#00FF00",
     "blue": "#0000FF"
 }
+
+width_select.addEventListener('click',(event)=>{
+    width_value = event.target.value
+
+
+
+
+})
+
 run.addEventListener("click", () => {
-    browser.style.opacity = "0.3"
+
+    if(width_value == 0) {
+        let li = document.createElement('li')
+        li.classList.add('crp-completing-stage-text')
+
+        image_block.style.transition =   `height ${1.5}s`
+            li.innerText = 'Domy karucvum e'
+        crpCompletingStage.appendChild(li)
+
+        setTimeout(() => {
+
+            let li = document.createElement('li')
+            li.classList.add('crp-completing-stage-text')
+            li.innerText = " Karucvum e cssom-y"
+            crpCompletingStage.appendChild(li)
+        }, 1500)
+
+        setTimeout(() => {
+            let li = document.createElement('li')
+            li.classList.add('crp-completing-stage-text')
+            li.innerText = " sksvum e rendering puly htmly ev cssy mianum en irar"
+            crpCompletingStage.appendChild(li)
+        }, 3000)
+
+        setTimeout(() => {
+
+            image_block.style.width = 200 + 'px'
+            image_block.style.height = 200 + 'px'
+        }, 4000)
+
+    } else {
+
+    }
+
+    image_block.style.width = width_value + 'px'
+    performance_data.forEach(element =>  width_value == 0 ? element.innerText = 96:element.innerText = 100)
     codeEditor.style.opacity = "1"
     clear()
     let elements = document.querySelectorAll("p")
@@ -100,7 +150,7 @@ run.addEventListener("click", () => {
             el.style.textAlign = selectTextAlign.value
             el.style.fontFamily = selectFontFamily.value
         })
-        img.style.width = selectWidth.value
+
         clear()
         selectColor.style.display = "inline"
         if (span) {
@@ -113,7 +163,7 @@ run.addEventListener("click", () => {
     }, 14000)
 })
 
-function clear() {
+    function clear() {
     divTags[0].style.background = "transparent"
     divTags[1].style.background = "transparent"
     pTags.map(el => el.style.background = "transparent")
