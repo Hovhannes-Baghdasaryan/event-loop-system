@@ -15,6 +15,7 @@
         <div class="menu-item" data-name="promise">Promise</div>
         <div class="menu-item" data-name="console">Console.log</div>
     </div>
+
     <div class="codeEditor">
 
     </div>
@@ -22,5 +23,40 @@
     <div class="run-container">
         <button id="run">Run Code</button>
     </div>
-</body>
+
+    <section class="event-loop">
+        <div class="block_wrapper">
+            <p class="block_text">Call Stack</p>
+            <div class="callstack" id="callback_element">
+            </div>
+        </div>
+
+        <img src="./../assets/event-loop-spinner.svg" class="spinner" id="event_spinner" />
+
+        <div class="main_wrapper">
+            <div class="block_wrapper webapi_wrapper">
+                <p class="block_text">WEB API</p>
+                <div class="webapi">
+                    
+                </div>
+            </div>
+            
+            <div class="task_queue">
+                <div class="block_wrapper">
+                    <div class="microtask">
+                        
+                    </div>
+                    <p class="block_text">Microtask</p>
+                </div>
+
+                <div class="block_wrapper">
+                    <div class="macrotask">
+                        
+                    </div>
+                    <p class="block_text">Macrotask</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </body>
 </html>

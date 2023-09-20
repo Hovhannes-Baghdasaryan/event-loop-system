@@ -61,3 +61,116 @@ pre  {
     display: flex;
     justify-content: center;
 }
+
+.event-loop {
+    margin: 0 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block_wrapper {
+    width: fit-content;
+}
+
+.block_text {
+    text-align: center;
+}
+
+.callstack {
+    min-width: 200px;
+    padding: 5px;
+    height: 300px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.callstack-item {
+    padding: 20px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: white;
+    background-color: gray;
+    animation: add-callstack 1s;
+}
+
+.callstack-item-remove {
+    animation: remove-callstack 1s;
+}
+
+@keyframes add-callstack {
+     0% {
+        opacity: 0;
+        transform: translateY(30px);
+     } 100% {
+        transform: translateY(0);
+        opacity: 1;
+     } 
+}
+
+@keyframes remove-callstack {
+     0% {
+        opacity: 1;
+        transform: translateY(0);
+     } 100% {
+        opacity: 0;
+        transform: translateY(30px);
+     } 
+}
+
+@keyframes rotate-spinner {
+     from {
+          transform: rotate(0);
+     } to {
+          transform: rotate(360deg);
+     }
+}
+
+.rotate {
+    animation: rotate-spinner 2s;
+}
+
+.spinner {
+    margin-top: 20%;
+    height: 40px;
+    width: 40px;
+}
+
+.webapi {
+    width: 100%;
+    height: 150px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+.webapi_wrapper {
+    width: 100%;
+}
+
+.microtask {
+    width: 100px;
+    height: 300px;
+    border: 2px solid gray;
+    border-radius: 10px;
+}
+
+.macrotask {
+    width: 100px;
+    height: 300px;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+
+.task_queue {
+    display: flex;
+    gap: 10px;
+}
+
+.main_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
