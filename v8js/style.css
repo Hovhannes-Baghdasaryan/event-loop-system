@@ -50,7 +50,7 @@
     height: 70vh;
     background: #101010;
     color: white;
-    font-size: 40px;
+    font-size: 35px;
     outline: none;
     border: none;
     resize: none;
@@ -60,7 +60,7 @@
     height: 70vh;
     background: #101010;
     color: white;
-    font-size: 40px;
+    font-size: 35px;
     display: none;
 }
 #run{
@@ -96,4 +96,7 @@ span{
 }
 .foo{
     color: rgb(215, 255, 85);
+}
+.if{
+    color:#7d37ff;
 }
