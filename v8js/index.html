@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V8 Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="./app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="steps">
+            <div>Tokenizing</div>
+            <div>Lexical Analysing</div>
+            <div>Abstact Syntax Tree</div>
+        </div>
+        <div class="codeEditor">
+            <div>
+                <textarea id="code">
+//My Code
+let name = "John"
+console.log(name)</textarea>
+                <div id="fakeCode">
+
+                </div>
+                <button id="run">Run</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
