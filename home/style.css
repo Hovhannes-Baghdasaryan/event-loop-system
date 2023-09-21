@@ -2,51 +2,108 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Poppins;
 }
 
-body {
-  height: 100vh;
-}
-
-.home_main {
-  gap: 24px;
-  padding: 24px;
+.main {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.home_main_title {
-  font-size: 48px;
-  font-weight: 700;
+.header {
+  display: flex;
+  position: relative;
+  justify-content: stretch;
+  background-color: #0a131a;
+  border-bottom: 1px solid #21425a;
+}
+
+.header_crp {
+  border-right: 1px solid #21425a;
+  width: 100%;
+  animation-duration: 6s;
+}
+
+.header_loop {
+  width: 100%;
+  animation-duration: 6s;
+}
+
+.header_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 55px;
+  background-color: #0f1e29;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 48px;
+  padding: 8px 32px;
   display: flex;
   justify-content: center;
-  width: 100%;
+  align-items: center;
+  animation-duration: 6s;
 }
 
-.home_main_container {
+.header_text {
+  color: #b8d2e5;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+  display: flex;
+  justify-content: center;
+  padding: 20px 32px;
+  animation-duration: 2s;
+}
+
+.section {
+  background-color: #0f1e29;
+  height: 100%;
   display: flex;
   justify-content: stretch;
 }
 
-.home_main_container_title {
-  font-size: 24px;
-  font-weight: 700;
-  color: darkcyan;
+.section_common {
+  width: 100%;
+  padding: 32px 64px;
 }
 
-.home_main_container_crp {
-  padding: 24px;
-  background-color: rgba(0, 0, 0, 0.15);
-  width: 100%;
-  height: calc(100vh - 129px);
-  border-radius: 16px 0 0 16px;
-  border-right: 1px solid black;
+.section_crp {
+  border-right: 1px solid #21425a;
 }
 
-.home_main_container_loop {
-  padding: 24px;
-  background-color: rgba(0, 0, 0, 0.15);
-  width: 100%;
-  border-radius: 0 16px 16px 0;
-  height: calc(100vh - 129px);
+.section_text {
+  color: #89a5ba;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+.section_common .section_text:last-child {
+  margin-bottom: 120px;
+}
+
+.section_link {
+  color: #b8d2e5;
+  background-color: #172c3f;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  animation-delay: 3s;
+  scale: 1;
+  transition: color 0.7s, background-color 0.7s;
+}
+
+.section_link:hover {
+  background-color: #21425a;
+  color: #fff;
+}
+
+.footer {
+  background-color: #172c3f;
+  height: 56px;
 }
