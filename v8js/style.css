@@ -62,6 +62,7 @@
     color: white;
     font-size: 35px;
     display: none;
+    transition: 300ms;
 }
 #run{
     width: 150px;
