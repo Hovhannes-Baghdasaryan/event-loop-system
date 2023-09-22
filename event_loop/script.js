@@ -1,93 +1,119 @@
-import { CodeBlocks } from "./const.js";
-import { initCallStack } from "./utils.js";
+// import { CodeBlocks } from "./const.js";
+// import { initCallStack } from "./utils.js";
 
-const menu = document.querySelector(".menu")
-const codeEditor = document.querySelector(".codeEditor")
-const run = document.getElementById("run")
-const callbackElement = document.getElementById("callback_element")
-const event_spinner = document.getElementById("event_spinner")
+// const menu = document.querySelector(".menu");
+// const codeEditor = document.querySelector(".codeEditor");
+// const run = document.getElementById("run");
+// const callbackElement = document.getElementById("callback_element");
+// const event_spinner = document.getElementById("event_spinner");
 
-const codeBlocks = [];
-const eventLoopBlocks = []
+// const codeBlocks = [];
+// const eventLoopBlocks = [];
 
-menu.addEventListener('click', (e) => {
-    const {name} = e.target.dataset
+// menu.addEventListener("click", (e) => {
+//   const { name } = e.target.dataset;
 
-     if(!name || !CodeBlocks[name]) return;
+//   if (!name || !CodeBlocks[name]) return;
 
-     const {html, values} = CodeBlocks[name]()
+//   const { html, values } = CodeBlocks[name]();
 
-     codeBlocks.push(values)
+//   codeBlocks.push(values);
 
-     codeEditor.innerHTML += html
-})
+//   codeEditor.innerHTML += html;
+// });
 
-run.addEventListener('click', () => {
-    let code = ``;
+// run.addEventListener("click", () => {
+//   let code = ``;
 
-    callbackElement.innerHTML = ""
-    eventLoopBlocks.length = 0
-    
-    codeBlocks.map(block => {
-        switch (block.type) {
-            case "console":
-                code += `\n console.log("${block.consoleValue()}")`
-                const newConsoleItem = {
-                    element: {
-                        view: `console.log("${block.consoleValue()}")`,
-                        callback:`console.log("${block.consoleValue()}")`,
-                    }, 
-                    type: 'console'
-                }
-                eventLoopBlocks.push(newConsoleItem)
-                break;
+//   callbackElement.innerHTML = "";
+//   eventLoopBlocks.length = 0;
 
-            case "timeout":
-                const newTimeoutView = `\n setTimeout(() => {
-                    console.log("${block.consoleValue()}") 
-                }, ${Number(block.timeoutValue())})`
+//   codeBlocks.map((block) => {
+//     switch (block.type) {
+//       case "console":
+//         code += `\n console.log("${block.consoleValue()}")`;
+//         const newConsoleItem = {
+//           element: {
+//             view: `console.log("${block.consoleValue()}")`,
+//             callback: `console.log("${block.consoleValue()}")`,
+//           },
+//           type: "console",
+//         };
+//         eventLoopBlocks.push(newConsoleItem);
+//         break;
 
-                code += newTimeoutView
-                const newTimeoutItem = {
-                    element: {
-                        callback:`console.log("${block.consoleValue()}")`,
-                        delay: Number(block.timeoutValue()),
-                        view: newTimeoutView,
-                    }, 
-                    type: 'timeout'
-                }
-                eventLoopBlocks.push(newTimeoutItem)
-                break;
+//       case "timeout":
+//         const newTimeoutView = `\n setTimeout(() => {
+//                     console.log("${block.consoleValue()}")
+//                 }, ${Number(block.timeoutValue())})`;
 
-            case "interval":
-                code += `\n setInterval(() => {
-                    console.log("${block.consoleValue()}")
-                }, ${Number(block.intervalValue())})`
-                break;
+//         code += newTimeoutView;
+//         const newTimeoutItem = {
+//           element: {
+//             callback: `console.log("${block.consoleValue()}")`,
+//             delay: Number(block.timeoutValue()),
+//             view: newTimeoutView,
+//           },
+//           type: "timeout",
+//         };
+//         eventLoopBlocks.push(newTimeoutItem);
+//         break;
 
-            case "promise":
-                code += `\n new Promise((resolve) => {
-                        console.log("${block.nestedConsoleValue()}")
-            
-                        resolve("${block.resolveValue()}")
-                    })
-                    .then(data => console.log(data))
-                    console.log("${block.globalConsoleValue()}")`
-                break;
-        }
-    })
+//       case "interval":
+//         code += `\n setInterval(() => {
+//                     console.log("${block.consoleValue()}")
+//                 }, ${Number(block.intervalValue())})`;
+//         break;
 
-    const addCallStack = initCallStack(eventLoopBlocks, callbackElement)
+//       case "promise":
+//         code += `\n new Promise((resolve) => {
+//                         console.log("${block.nestedConsoleValue()}")
 
-    addCallStack()
+//                         resolve("${block.resolveValue()}")
+//                     })
+//                     .then(data => console.log(data))
+//                     console.log("${block.globalConsoleValue()}")`;
+//         break;
+//     }
+//   });
 
-    setInterval(() => {
-        const callback = addCallStack()
+//   const addCallStack = initCallStack(eventLoopBlocks, callbackElement);
 
-        if(!callback) clearInterval(callback)
-    }, 2000)
-})
+//   addCallStack();
 
+//   setInterval(() => {
+//     const callback = addCallStack();
 
+//     if (!callback) clearInterval(callback);
+//   }, 2000);
+// });
 
 // event_spinner.classList.add('rotate')
+
+const menuButtons = Array.from(document.getElementsByClassName("event_item"));
+const modal = document.getElementById("modal");
+const modalContainer = document.getElementById("modalContainer");
+const run = document.getElementById("run");
+
+menuButtons.map((element, index) =>
+  element.addEventListener("click", () => {
+    run.removeAttribute("disabled");
+
+    if (index !== menuButtons.length - 1) {
+      element.classList.add("event_item_active");
+    }
+  })
+);
+
+run.addEventListener("click", () => {
+  modal.style.setProperty("display", "flex");
+});
+
+window.addEventListener("click", (event) => {
+  if (
+    event.target.contains(modalContainer) &&
+    event.target !== modalContainer
+  ) {
+    modal.style.setProperty("display", "none");
+  }
+});
